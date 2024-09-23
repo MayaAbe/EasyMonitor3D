@@ -50,6 +50,11 @@ tex_coords_flip_top_180 = [
     (1, 0), (0, 0), (0, 1), (1, 1)
 ]
 
+# 背景画像を反時計回りに180度回転させるテクスチャ座標
+background_tex_coords_180 = [
+    (1, 1), (0, 1), (0, 0), (1, 0)
+]
+
 # 背景用の四角形
 background_vertices = [
     (-1, -1, 0), (1, -1, 0), (1, 1, 0), (-1, 1, 0)
@@ -72,7 +77,7 @@ def draw_background(texture_id):
     glBindTexture(GL_TEXTURE_2D, texture_id)
     glBegin(GL_QUADS)
     for i, vertex in enumerate(background_vertices):
-        glTexCoord2fv(default_tex_coords[i])  # 背景はデフォルトの座標
+        glTexCoord2fv(background_tex_coords_180[i])  # 背景を反時計回りに180度回転させた座標
         glVertex3fv(vertex)
     glEnd()
 
