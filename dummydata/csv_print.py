@@ -1,8 +1,19 @@
 import pandas as pd
 import time
+from pathlib import Path
+
+# スクリプトのディレクトリを取得
+try:
+    current_dir = Path(__file__).resolve().parent
+except NameError:
+    # __file__ が定義されていない場合（例: Jupyter Notebook）
+    current_dir = Path.cwd()
+
+# CSVファイルのパスを生成
+csv_file_path = current_dir / 'dummy_attitude.csv'
 
 # CSVファイルを読み込む
-data = pd.read_csv('dummy_attitude.csv')
+data = pd.read_csv(csv_file_path)
 
 # 表示したい行数を指定
 num_lines_to_print = 1000  # 例：1000行

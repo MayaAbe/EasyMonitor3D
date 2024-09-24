@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from pathlib import Path
 
 # 各列の上限値
 pitch_max = 720
@@ -27,4 +28,6 @@ data = pd.DataFrame({
 })
 
 # CSVファイルとして保存
-data.to_csv('dummy_attitude.csv', index=False)
+current_dir = Path(__file__).resolve().parent
+file_path = current_dir / 'dummy_attitude.csv'
+data.to_csv(file_path, index=False)

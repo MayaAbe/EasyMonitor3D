@@ -4,9 +4,10 @@ import random
 import json
 import pandas as pd
 import time
+from pathlib import Path
 
 # CSVファイルを読み込む
-data = pd.read_csv('.\dummydata\dummy_attitude.csv')
+data = pd.read_csv(str(Path('dummydata') / 'dummy_attitude.csv'))
 
 # 表示したい行数を指定
 num_lines_to_print = 1000  # 例：1000行

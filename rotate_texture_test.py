@@ -3,6 +3,7 @@ from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from PIL import Image
+from pathlib import Path
 
 # 立方体の頂点座標
 vertices = [
@@ -135,19 +136,19 @@ def main():
     resize_viewport(display[0], display[1])  # 初期のアスペクト比を設定
 
     # 背景のテクスチャを読み込み
-    background_texture = load_texture('background_image.png')  # 背景画像のパス
+    background_texture = load_texture(str(Path('images') / 'background_image.png'))  # 背景画像のパス
 
     glEnable(GL_TEXTURE_2D)
     glEnable(GL_DEPTH_TEST)
 
     # 各面に張り付ける画像ファイルのパスを指定
     texture_paths = [
-        'back_image.png',   # 背面
-        'front_image.png',  # 前面
-        'right_image.png',  # 右面
-        'left_image.png',   # 左面
-        'top_image.png',    # 上面
-        'bottom_image.png'  # 底面
+        str(Path('images') / 'back_image.png'),   # 背面
+        str(Path('images') / 'front_image.png'),  # 前面
+        str(Path('images') / 'right_image.png'),  # 右面
+        str(Path('images') / 'left_image.png'),   # 左面
+        str(Path('images') / 'top_image.png'),    # 上面
+        str(Path('images') / 'bottom_image.png')  # 底面
     ]
 
     textures = [load_texture(path) for path in texture_paths]
