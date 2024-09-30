@@ -19,3 +19,41 @@
 
 ## 推奨動作環境
 インタプリタはPython3.9を使用してください．
+
+## 環境構築
+
+1. リポジトリのクローン
+    ```bash
+    git clone https://github.com/MayaAbe/Network
+    cd Network
+    ```
+2. Python 3.9 のインストール（必要に応じて）
+3. 仮想環境の作成
+
+   ```bash
+   python3.9 -m venv venv
+   ```
+
+
+4. 仮想環境の有効化
+* Windows:
+
+    ```bash
+    venv\Scripts\activate
+    ```
+
+* Mac/Linux:
+    ```bash
+    source venv/bin/activate
+    ```
+5. 必要なパッケージのインストール
+    ```bash
+    pip install -r requirements.txt
+6. サーバ(3Dビューア)の起動
+
+    `rotate_texture_udp.py`を実行します．
+    始めは黒い画面しか映りませんが，データを受信し始めたら3Dビューアが動作し始めます．
+7. データ送信プログラムの実行
+
+   `attitide_client.py`を実行する．ダミーの姿勢データが格納されたcsvファイルから姿勢データが送信される．
+   本ファイルの関数をコピーして任意のプログラムに組み込めば姿勢ビューアがうまく使える．
