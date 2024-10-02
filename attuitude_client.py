@@ -22,3 +22,4 @@ for index in range(num_lines_to_print):
     # JSON形式に変換
     json_data = json.dumps({"numbers": [row['pitch'], row['yaw'], row['roll']]})
     sock.sendto(json_data.encode(), ('localhost', 12345))
+    time.sleep(0.015)  # 60fpsくらいになるように調整

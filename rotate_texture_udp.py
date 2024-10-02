@@ -216,7 +216,7 @@ def main():
             draw_textured_cube(textures)
 
             pygame.display.flip()
-            clock.tick(target_fps)
+            # clock.tick(target_fps)
     finally:
         sock.close()
 
